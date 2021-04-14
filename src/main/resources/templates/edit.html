@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Alumnos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+<body>
+	<div class="container">
+	
+		<h1>Actualizar Alumno</h1>
+		
+		<form th:action="@{/alumnos/update/{id}(id=${alumno.id})}" th:object="${alumno}" method="post">
+			
+			<input type="hidden" th:field="${alumno.id}">
+			
+			<div class="mb-3">
+				<label for="formGroupExampleInput" class="form-label">Nombre</label>
+				<input type="text" class="form-control" id="formGroupExampleInput" name="nombre" th:field="${alumno.nombre}">
+			<div class="mb-3">
+				<label for="formGroupExampleInput2" class="form-label">Apellido</label>
+				<input type="text" class="form-control" id="formGroupExampleInput2" name="apellido" th:field="${alumno.apellido}">
+			</div>
+			<div class="mb-3">
+				<label for="formGroupExampleInput2" class="form-label">Nota</label>
+				<input type="text" class="form-control" id="formGroupExampleInput2" name="nota" th:field="${alumno.nota}">
+			</div>
+			
+			<button type="submit" class="btn btn-success">Actualizar Alumno</button>
+
+		</form>
+	</div>
+</body>
+</html>
